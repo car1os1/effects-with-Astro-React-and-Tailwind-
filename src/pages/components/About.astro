@@ -57,17 +57,17 @@ import Arequipa from "../../../public/Arequipa.jpg";
             class="flex justify-center pt-12 text-center text-main text-content xl:gap-16"
         >
             <div class="w-32">
-                <h2>Art Posts</h2>
+                <h2>Altitude</h2>
                 <p id="art-counter" class="text-xl font-bold">85</p>
             </div>
             <div class="w-32">
-                <h2>Youtube</h2>
+                <h2>Population</h2>
                 <p id="youtube-counter" class="text-xl font-bold">1.2m</p>
             </div>
             <div class="w-32">
-                <h2>Reviews</h2>
+                <h2>Anniversary</h2>
                 <p id="reviews-counter" class="text-bold text-xl font-bold">
-                    250+
+                    15
                 </p>
             </div>
         </div>
@@ -116,6 +116,37 @@ import Arequipa from "../../../public/Arequipa.jpg";
         path.style.strokeDasharray = pathLength.toString();
         path.style.strokeDashoffset = pathLength.toString();
     }
+
+    function incrementCounter(
+        selector: string,
+        current: number,
+        target: number,
+        duration: number,
+        letter: string = ""
+    ) {
+        let counter = document.getElementById(selector);
+        let stepTime = Math.abs(Math.floor(duration / target));
+        if (current < target && counter) {
+            current++;
+            counter.innerText = current.toString() + letter;
+
+            setTimeout(
+                () =>
+                    incrementCounter(
+                        selector,
+                        current,
+                        target,
+                        duration,
+                        letter
+                    ),
+                stepTime
+            );
+        }
+    }
+
+    incrementCounter("art-counter", 0, 2335, 100, "m");
+    incrementCounter("youtube-counter", 0, 1, 1000, "M");
+    incrementCounter("reviews-counter", 0, 15, 2000, " Agosto");
 
     window.addEventListener("DOMContentLoaded", updatePath);
     window.addEventListener("resize", updatePath);

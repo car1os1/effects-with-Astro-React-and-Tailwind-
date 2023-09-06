@@ -29,7 +29,7 @@ export default function Nav() {
 
             <div className='block md:hidden'>
             </div>
-            <h1 className=' text-lg font-bold '>Carlos</h1>
+            <h1 className=' text-lg font-bold '>Arequipa</h1>
 
             <div className='flex gap-12 '>
                 <a className='hidden md:block' href="">Home</a>
