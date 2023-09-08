@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Avatar from '../../../public/avatar.avif'
+import Avatar from '/avatarf.png'
 
 
 export default function Nav() {
@@ -13,7 +13,7 @@ export default function Nav() {
 
     return (
 
-        <nav className='relative mx-8 mb-24 flex justify-between items-center pt-12 pb-6 font-medium md:mx-16'>
+        <nav className='relative mx-8 mb-24 flex items-center justify-between  pt-12 pb-6 font-medium md:mx-16 lg:mx-16 '>
             <svg
                 width='250'
                 className=' absolute bottom-0 left-1/2 -translate-x-1/2'
@@ -29,7 +29,7 @@ export default function Nav() {
 
             <div className='block md:hidden'>
             </div>
-            <h1 className=' text-lg font-bold '>Arequipa</h1>
+            <h1 className=' text-lg font-bold text-center'>Arequipa</h1>
 
             <div className='flex gap-12 '>
                 <a className='hidden md:block' href="">Home</a>
